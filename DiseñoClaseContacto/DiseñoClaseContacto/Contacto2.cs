@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace DiseñoClaseContacto
 {
-    class Contacto
+    class Contacto2
     {
         private string nombre, telefono;
         private DateTime fechaNacimiento;
-        
 
-        public Contacto (string nombre, string telefono, DateTime fechaNacimiento)
+
+        public Contacto2(string nombre, string telefono, DateTime fechaNacimiento)
         {
             this.nombre = nombre;
             this.telefono = telefono;
             this.fechaNacimiento = fechaNacimiento;
         }
-        public  Contacto(string nombre, DateTime fechaNacimiento)
+        public Contacto2(string nombre, DateTime fechaNacimiento)
         {
-            this.nombre = nombre;          
+            this.nombre = nombre;
             this.fechaNacimiento = fechaNacimiento;
             int yearToday = DateTime.Today.Year;
             int fecha = fechaNacimiento.Year;
 
             int edad = yearToday - fecha;
-            if (edad > 120 ||edad<0)
+            if (edad > 120 || edad < 0)
             {
-              SetFechaNacimiento(DateTime.Today);
+                SetFechaNacimiento(DateTime.Today);
 
             }
         }
-        public Contacto(string nombre, string telefono)
+        public Contacto2(string nombre, string telefono)
         {
             this.nombre = nombre;
             this.telefono = telefono;
-            fechaNacimiento=DateTime.Now;
+            fechaNacimiento = DateTime.Now;
         }
 
         //GETTERS Y SETTERS
@@ -66,17 +66,7 @@ namespace DiseñoClaseContacto
             this.fechaNacimiento = fechaNacimiento;
         }
 
-        //METODOS
-
-        //public void CambiarNombre(string nombre)
-        //{
-        //   this.nombre = nombre;
-        //}
-
-        //public void DevolverNombre()
-        //{
-        //    GetNombre();
-        //}
+        //Methods
         public int ObtenerEdad()
         {
             int yearToday = DateTime.Today.Year;
@@ -102,16 +92,11 @@ namespace DiseñoClaseContacto
             {
                 result += this.DevolverTelefono() + " ";
             }
-            if(this.GetFechaNacimiento() != new DateTime())
+            if (this.GetFechaNacimiento() != new DateTime())
             {
                 result += this.GetFechaNacimiento();
             }
             return result;
-
-            //return this.GetNombre() + " " + this.DevolverTelefono() + " " + this.GetFechaNacimiento();
         }
-
-
-
     }
 }
