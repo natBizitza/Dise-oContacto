@@ -49,17 +49,60 @@ namespace DiseñoClaseContacto
             Contacto2 c2 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4), "colleague");
             Contacto2 c3 = new Contacto2("Nat", "11111", new DateTime(1996, 09, 4), "family");
 
+            List<Contacto2> contactos = new List<Contacto2>();
+
+            Console.WriteLine("Total number of contacts:");
+            contactos.Add(c1);
+            contactos.Add(c2);
+            contactos.Add(c3);
+
+           int totalNumber = contactos.Count();
+           Console.WriteLine(totalNumber);
+
+            // creating new list to save all colleagues there
+            List<Contacto2> colleagues = new List<Contacto2>();
+            foreach(Contacto2 contacto in contactos)
+            {
+                if(contacto.ObtenerTipo() == "colleague")
+                {
+                    colleagues.Add(contacto);
+                }
+            }
+
+            // to show the new list
+            Console.WriteLine("Lista de contactos tipo colleague: ");
+            foreach (Contacto2 contacto in colleagues)
+            {
+                Console.WriteLine(contacto.MostrarDatos());
+            }
+
+            // creating new list to save all amigos there
+            List<Contacto2> family = new List<Contacto2>();
+            foreach (Contacto2 contacto in contactos)
+            {
+                if (contacto.ObtenerTipo() == "family")
+                {
+                    family.Add(contacto);
+                }
+            }
+
+            // to show the new list
+            Console.WriteLine("Lista de contactos tipo family ");
+            foreach (Contacto2 contacto in family)
+            {
+                Console.WriteLine(contacto.MostrarDatos());
+            }
+
             //Console.WriteLine(c1.ObtenerNumContactos());
-            Console.WriteLine(c1.MostrarDatos());
-            Console.WriteLine(c2.MostrarDatos());
-            Console.WriteLine(c3.MostrarDatos());
+            //Console.WriteLine(c1.MostrarDatos());
+            //Console.WriteLine(c2.MostrarDatos());
+            //Console.WriteLine(c3.MostrarDatos());
             //to show the dates of all contacts
             //Console.WriteLine(Contacto2.MostrarDatos());
 
-
             //toshow the number of all contacts. Applying the method to the class to see the number of all contacts
-            Console.WriteLine(Contacto2.ObtenerNumContactos());
-            Console.WriteLine(Contacto2.ObtenerNumFamiliares());
+            //Console.WriteLine(Contacto2.ObtenerNumContactos());
+            //Console.WriteLine(Contacto2.ObtenerNumFamiliares());
             //Console.WriteLine(Contacto2.ObtenerNumContactos());
             //Console.WriteLine(Contacto2.ObtenerNumContactos());
             //Console.WriteLine(Contacto2.ObtenerNumContactos());
