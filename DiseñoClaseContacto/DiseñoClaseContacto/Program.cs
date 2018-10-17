@@ -44,8 +44,8 @@ namespace DiseñoClaseContacto
 
             //CLASE CONTACTO 2
 
-            Contacto2 c1 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4) );
-            Console.WriteLine(c1.ObtenerNumContactos());
+            Contacto2 c1 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4), "family" );
+            //Console.WriteLine(c1.ObtenerNumContactos());
             Console.WriteLine(c1.MostrarDatos());
 
 

@@ -23,41 +23,41 @@ namespace DiseñoClaseContacto
 
 
 
-        public Contacto2(string nombre, string telefono, DateTime fechaNacimiento)
+        public Contacto2(string nombre, string telefono, DateTime fechaNacimiento, string type)
         {
             this.nombre = nombre;
             this.telefono = telefono;
             this.fechaNacimiento = fechaNacimiento;
+            this.type = type;
 
-            Console.WriteLine("Choose:");
-            Console.WriteLine("1 - family");
-            Console.WriteLine("2 - colleague");
-            Console.WriteLine("3 - uni mate");
-            int num1 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Choose:");
+            //Console.WriteLine("family");
+            //Console.WriteLine("colleague");
+            //Console.WriteLine("uniMate");
 
-            switch (num1)
+            switch (type)
             {
-                case 1:
+                case "family":
                     familyNumber++;
                     Console.WriteLine("Family friends: " + familyNumber);
                     break;
-                case 2:
+                case "colleague":
                     colleagueNumber++;
                     Console.WriteLine("Colleagues: " + colleagueNumber);
                     break;
-                case 3:
+                case "uniMate":
                     uniMateNumber++;
                     Console.WriteLine("Uni mates: " + uniMateNumber);
-
                     break;
                 default:
                     friendNumber++;
-                    Console.WriteLine("Just friend: " + friendNumber);
+                    Console.WriteLine("Just a friend: " + friendNumber);
                     break;
 
             }
-            numberContact++;
-            Console.WriteLine("Total number of friends: " + numberContact);
+            //numberContact++;
+            //Console.WriteLine("Total number of friends: " + numberContact);
+            Console.WriteLine(type);
 
         }
         public Contacto2(string nombre, DateTime fechaNacimiento)
@@ -165,13 +165,12 @@ namespace DiseñoClaseContacto
             }
             if (this.GetFechaNacimiento() != new DateTime())
             {
-                result += this.GetFechaNacimiento();
+                result += this.GetFechaNacimiento() + " ";
             }
-            // to add type of friend
-            //if (this.type != "")
-            //{
-            //    result += this.
-            //}
+            if( this.type !="")
+            {
+                result += this.ObtenerTipo() + " ";
+            }
             return result;
         }
     }
