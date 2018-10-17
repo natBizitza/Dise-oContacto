@@ -44,9 +44,17 @@ namespace DiseñoClaseContacto
 
             //CLASE CONTACTO 2
 
-            Contacto2 c1 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4), "family" );
+            Contacto2 c1 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4), "colleague");
+            Contacto2 c2 = new Contacto2("Natalia", "11111", new DateTime (1996, 09, 4), "colleague");
+            Contacto2 c3 = new Contacto2("Nat", "11111", new DateTime(1996, 09, 4), "family");
+
             //Console.WriteLine(c1.ObtenerNumContactos());
             Console.WriteLine(c1.MostrarDatos());
+            Console.WriteLine(c2.MostrarDatos());
+            Console.WriteLine(c3.MostrarDatos());
+            //applying the method to the class to see the number of all contacts
+            Console.WriteLine(Contacto2.ObtenerNumContactos());
+
 
 
             Console.ReadLine();

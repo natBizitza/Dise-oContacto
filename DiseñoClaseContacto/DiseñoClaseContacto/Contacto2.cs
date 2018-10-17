@@ -11,12 +11,12 @@ namespace DiseñoClaseContacto
         private string nombre, telefono;
         private DateTime fechaNacimiento;
         private string type;
-        static int count;
-        private int familyNumber = 0;
-        private int friendNumber = 0;
-        private int colleagueNumber = 0;
-        private int uniMateNumber = 0;
-        private int numberContact = 0;
+        private static int count;
+        private static int familyNumber = 0;
+        private static int friendNumber = 0;
+        private static int colleagueNumber = 0;
+        private static int uniMateNumber = 0;
+        private static int numberContact = 0;
 
 
 
@@ -55,8 +55,8 @@ namespace DiseñoClaseContacto
                     break;
 
             }
-            //numberContact++;
-            //Console.WriteLine("Total number of friends: " + numberContact);
+            numberContact++;
+            Console.WriteLine("Total number of friends: " + numberContact);
             Console.WriteLine(type);
 
         }
@@ -117,25 +117,25 @@ namespace DiseñoClaseContacto
         {
             this.type = type;
         }
-        public int ObtenerNumContactos()
+        public static int ObtenerNumContactos()
         {
-            return this.numberContact;
+            return numberContact;
         }
         public int ObtenerNumFamiliares()
         {
-            return this.familyNumber;
+            return familyNumber;
         }
         public int ObtenerNumAmigos()
         {
-            return this.friendNumber;
+            return friendNumber;
         }
         public int ObtenerNumTrabajo()
         {
-            return this.colleagueNumber;
+            return colleagueNumber;
         }
         public int ObtenerNumEstudios()
         {
-            return this.uniMateNumber;
+            return uniMateNumber;
         }
         //Methods
         public int ObtenerEdad()
@@ -154,8 +154,9 @@ namespace DiseñoClaseContacto
 
         public string MostrarDatos()
         {
-            string result = "";
-            if (this.GetNombre() != "")
+            string result = " ";
+            // we add here the quotation marks to add space between parameters
+            if (this.GetNombre() != " ")
             {
                 result += this.GetNombre() + " ";
             }
@@ -167,7 +168,7 @@ namespace DiseñoClaseContacto
             {
                 result += this.GetFechaNacimiento() + " ";
             }
-            if( this.type !="")
+            if( this.type !=" ")
             {
                 result += this.ObtenerTipo() + " ";
             }
