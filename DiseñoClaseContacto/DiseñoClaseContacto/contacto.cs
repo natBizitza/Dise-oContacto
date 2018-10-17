@@ -36,6 +36,7 @@ namespace DiseñoClaseContacto
         {
             this.nombre = nombre;
             this.telefono = telefono;
+            //to string datetime.Today.ToString()
             fechaNacimiento=DateTime.Now;
         }
 
@@ -86,6 +87,7 @@ namespace DiseñoClaseContacto
             return edad;
 
         }
+        //CHANGE to see if it's really b-day
         public string Felicitara()
         {
             return "Feliz Cumpleaños";

@@ -18,11 +18,6 @@ namespace DiseñoClaseContacto
         private static int uniMateNumber = 0;
         private static int numberContact = 0;
 
-
-
-
-
-
         public Contacto2(string nombre, string telefono, DateTime fechaNacimiento, string type)
         {
             this.nombre = nombre;
@@ -35,7 +30,7 @@ namespace DiseñoClaseContacto
             //Console.WriteLine("colleague");
             //Console.WriteLine("uniMate");
 
-            switch (type)
+            switch (type.ToLower())
             {
                 case "family":
                     familyNumber++;
@@ -56,10 +51,12 @@ namespace DiseñoClaseContacto
 
             }
             numberContact++;
+            // Move teh code below to another method
             Console.WriteLine("Total number of friends: " + numberContact);
-            Console.WriteLine(type);
+            //Console.WriteLine(type);
 
         }
+
         public Contacto2(string nombre, DateTime fechaNacimiento)
         {
             this.nombre = nombre;
@@ -75,6 +72,7 @@ namespace DiseñoClaseContacto
             }
             count++;
         }
+
         public Contacto2(string nombre, string telefono)
         {
             this.nombre = nombre;
@@ -88,11 +86,13 @@ namespace DiseñoClaseContacto
         public string GetNombre()
         {
             return this.nombre;
-        }
+        }  
+
         public void CambiarNombre(string nombre)
         {
             this.nombre = nombre;
         }
+
         public string DevolverTelefono()
         {
             return this.telefono;
@@ -121,19 +121,19 @@ namespace DiseñoClaseContacto
         {
             return numberContact;
         }
-        public int ObtenerNumFamiliares()
+        public static int ObtenerNumFamiliares()
         {
             return familyNumber;
         }
-        public int ObtenerNumAmigos()
+        public static int ObtenerNumAmigos()
         {
             return friendNumber;
         }
-        public int ObtenerNumTrabajo()
+        public static int ObtenerNumTrabajo()
         {
             return colleagueNumber;
         }
-        public int ObtenerNumEstudios()
+        public static int ObtenerNumEstudios()
         {
             return uniMateNumber;
         }
@@ -147,6 +147,7 @@ namespace DiseñoClaseContacto
             return edad;
 
         }
+        //CHANGE
         public string Felicitara()
         {
             return "Feliz Cumpleaños";
@@ -174,5 +175,27 @@ namespace DiseñoClaseContacto
             }
             return result;
         }
+        //public static string MostrarDatosDeTodos() 
+        //{
+        //     string result = " ";
+        //    // we add here the quotation marks to add space between parameters
+        //    if (this.GetNombre() != " ")
+        //    {
+        //        result += this.GetNombre() + " ";
+        //    }
+        //    if (this.DevolverTelefono() != "")
+        //    {
+        //        result += this.DevolverTelefono() + " ";
+        //    }
+        //    if (this.GetFechaNacimiento() != new DateTime())
+        //    {
+        //        result += this.GetFechaNacimiento() + " ";
+        //    }
+        //    if( this.type !=" ")
+        //    {
+        //        result += this.ObtenerTipo() + " ";
+        //    }
+        //    return result;
+        //}
     }
 }
